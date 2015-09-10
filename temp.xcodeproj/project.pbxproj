@@ -30,6 +30,7 @@
 		3C9A1C721B97A43F00976AFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9A1C711B97A43F00976AFD /* SystemConfiguration.framework */; };
 		3C9A1C741B97A44500976AFD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9A1C731B97A44500976AFD /* libz.dylib */; };
 		3C9A1C761B97A44B00976AFD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9A1C751B97A44B00976AFD /* libsqlite3.dylib */; };
+		3CA0ACFB1BA15F77002AE68B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0ACFA1BA15F77002AE68B /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		3C9A1C711B97A43F00976AFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3C9A1C731B97A44500976AFD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3C9A1C751B97A44B00976AFD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3CA0ACFA1BA15F77002AE68B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				3C632EEB1B97A30A00B8E39C /* AppDelegate.swift */,
 				3C632EED1B97A30A00B8E39C /* ViewController.swift */,
+				3CA0ACFA1BA15F77002AE68B /* ProfileViewController.swift */,
 				3C632EEF1B97A30A00B8E39C /* Main.storyboard */,
 				3C632EF21B97A30A00B8E39C /* Images.xcassets */,
 				3C632EF41B97A30A00B8E39C /* LaunchScreen.xib */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA0ACFB1BA15F77002AE68B /* ProfileViewController.swift in Sources */,
 				3C632EEE1B97A30A00B8E39C /* ViewController.swift in Sources */,
 				3C632EEC1B97A30A00B8E39C /* AppDelegate.swift in Sources */,
 			);

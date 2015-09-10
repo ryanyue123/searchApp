@@ -7,34 +7,34 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1B1A492A-014D-47D7-BC72-4F289964A65B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>temp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7E7224C82E2B1AEF49117EB3E9A3167CA3376D0A</key>
-		<string>https://github.com/ryanyue123/firstapp.git</string>
+		<key>EA62E210F5486BB834F4E2A977875B45CFAE5511</key>
+		<string>https://github.com/ryanyue123/searchApp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>temp/temp.xcodeproj/project.xcworkspace</string>
+	<string>temp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7E7224C82E2B1AEF49117EB3E9A3167CA3376D0A</key>
-		<string>../../..</string>
+		<key>EA62E210F5486BB834F4E2A977875B45CFAE5511</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ryanyue123/firstapp.git</string>
+	<string>https://github.com/ryanyue123/searchApp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7E7224C82E2B1AEF49117EB3E9A3167CA3376D0A</string>
+	<string>EA62E210F5486BB834F4E2A977875B45CFAE5511</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7E7224C82E2B1AEF49117EB3E9A3167CA3376D0A</string>
+			<string>EA62E210F5486BB834F4E2A977875B45CFAE5511</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Notes</string>
+			<string>temp</string>
 		</dict>
 	</array>
 </dict>

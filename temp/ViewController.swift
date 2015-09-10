@@ -10,59 +10,17 @@ import UIKit
 import Parse
 import ParseUI
 class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UISearchBarDelegate {
-
+    
     @IBOutlet weak var userSearch: UISearchBar!
-    var searchActive: Bool?
-    var users: [AnyObject]?
-    
-//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-//        queryParseForListWithCallback(userList)
-//        
-//    }
-//    
-//    func queryParseForListWithCallback(completion: ([AnyObject]) -> ())
-//    {
-//        var query: PFQuery = PFQuery(className: "_User")
-//        query.fromLocalDatastore()
-//        query.whereKey("username", equalTo: userSearch.text)
-//        println(userSearch.text)
-//        query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]?, error: NSError?) -> Void in
-//            if ((error) == nil)
-//            {
-//                completion(objects!)
-//            }
-//            else
-//            {
-//                println(error?.userInfo)
-//            }
-//        }
-//    }
-//    
-//
-//    func userList(userlist: [AnyObject])
-//    {
-//        users = userlist
-//    }
-    
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        var query: PFQuery = PFQuery(className: "_User")
-        query.fromLocalDatastore()
-        query.whereKey("username", equalTo: userSearch.text)
-        println(userSearch.text)
-        query.findObjectsInBackgroundWithBlock {(objects: [AnyObject]?, error: NSError?) -> Void in
-            if ((error) == nil)
-            {
-                println(objects)
-            }
-            else
-            {
-                println(error?.userInfo)
-            }
+        var query = PFUser.query()!
+        query.whereKey("username", equalTo: searchBar.text)
+        if let user = query.getFirstObject() as? PFUser
+        {
+            self.performSegueWithIdentifier("showProfile", sender: self)
         }
     }
-    
-    
     
     
     

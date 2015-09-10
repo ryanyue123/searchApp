@@ -20,6 +20,10 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="raG-yt-kDV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -31,12 +35,39 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="userSearch" destination="eZo-uN-zg0" id="PzE-zg-szA"/>
+                        <outlet property="userSearch" destination="raG-yt-kDV" id="L1I-8y-AEA"/>
+                        <segue destination="T7X-EW-khQ" kind="show" identifier="showProfile" id="t7R-MK-ixB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="942" y="1000"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="EmF-A2-pux">
+            <objects>
+                <viewController id="T7X-EW-khQ" customClass="ProfileViewController" customModule="temp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xUA-ZM-Iwj"/>
+                        <viewControllerLayoutGuide type="bottom" id="RdT-eN-TfL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k30-iA-ek2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEx-pm-4aO">
+                                <rect key="frame" x="16" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wmX-YH-BF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781" y="1000"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xNd-cH-xLu">
