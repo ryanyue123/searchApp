@@ -9,15 +9,19 @@
 import UIKit
 import Parse
 import ParseUI
+import GoogleMaps
+
 class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var userSearch: UISearchBar!
+    var profileuser: PFUser!
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         var query = PFUser.query()!
         query.whereKey("username", equalTo: searchBar.text)
         if let user = query.getFirstObject() as? PFUser
         {
+            profileuser = user
             self.performSegueWithIdentifier("showProfile", sender: self)
         }
     }
@@ -28,6 +32,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         userSearch.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,9 +55,8 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             
             self.presentViewController(logInViewController, animated: true, completion: nil)
         }
+        searchForEvents()
     }
-    
-    
     
     
     
@@ -110,6 +114,51 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
         println("user canceled signup")
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showProfile")
+        {
+            let upcoming = segue.destinationViewController as! ProfileViewController
+            
+            upcoming.testString = profileuser.username
+            upcoming.testStr = profileuser.email
+        }
+    }
+    
+    func searchForEvents()
+    {
+//        var followArray: NSMutableArray = []
+//        var q = PFQuery(className: PFUser.currentUser()!.username!)
+//        q.selectKeys(["toUser"])
+//        q.findObjects()
+//        
+//        
+//        println("\n\n")
+//        println(q.getFirstObject()?.description)
+//        println("\n\n")
+//        
+//        
+//        
+//        var query = PFQuery(className: PFUser.currentUser()!.username! + "_Content")
+//        query.orderByDescending("updatedAt")
+//        query.findObjects()
+//
+//        
+//        var temp = query.getFirstObject()!["Location"] as? String
+//
+//        
+////        if query.countObjects() != 0
+////        {
+////            var obj = query.getFirstObject()!
+////            eventName.text = obj["Event_Title"] as? String
+////            locationName.text = obj["Location"] as? String
+////            addedBy.text = obj["User"] as? String
+////        }
+    }
+
+    
+    
+    
     
 }
 

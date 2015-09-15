@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize Parse.
         Parse.setApplicationId("1STRHKffpcDv3AtrJCMVLuUqlTgQnQbwb4QqylQ9",
             clientKey: "NQSPyf55cPfQfPjlLzho9VTxZTg89JaUsoGT7gnC")
+        
+        GMSServices.provideAPIKey("AIzaSyCqaWgNKIaZQnUPbtSsStN-DTeZ6hp4lwo")
         return true
     }
 

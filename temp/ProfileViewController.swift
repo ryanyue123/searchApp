@@ -7,11 +7,27 @@
 //
 
 import UIKit
+import Parse
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, GooglePlacesAutocompleteDelegate {
+    
+    
+    let gpaViewController = GooglePlacesAutocomplete(
+        apiKey: "AIzaSyAi--AlPdyIJveiyjIAXTz2xTOmaUrYvLU",
+        placeType: .Establishment
+    )
+    
+    
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    var testString: String!
+    var testStr: String!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameLabel.text = testString
+        userEmail.text = testStr
+        gpaViewController.placeDelegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +37,32 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func followUser(sender: UIButton) {
+        var newFollow: PFObject
+        var query: PFQuery = PFQuery(className: (PFUser.currentUser())!.username!)
+        query.whereKey("toUser", equalTo: testString)
+        if query.countObjects() == 0
+        {
+            newFollow = PFObject(className: (PFUser.currentUser())!.username!)
+            newFollow.setObject((PFUser.currentUser())!.username!, forKey: "fromUser")
+            newFollow.setObject(testString, forKey: "toUser")
+            newFollow.saveInBackgroundWithBlock { (success, error)  -> Void in
+                if (error == nil)
+                {
+                    println("FOLLOWED")
+                }
+                else
+                {
+                    //println(error?.description)
+                }
+            }
+        }
+        else
+        {
+            println("already followed")
+        }
 
+    }
     /*
     // MARK: - Navigation
 
@@ -33,3 +74,4 @@ class ProfileViewController: UIViewController {
     */
 
 }
+

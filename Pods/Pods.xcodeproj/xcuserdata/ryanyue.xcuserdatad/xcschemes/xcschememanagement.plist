@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GooglePlacesAutocomplete.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>358A538428727811FA937088EAF07963</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5095B58CB0FE90BBABEBC5A1E23A2C9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3BA72769AA436F385F29C879482C4E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB49B7174F65C7271C5CBBACB0C3A78B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7EDD32D05C633ACFF725343104F2C0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
