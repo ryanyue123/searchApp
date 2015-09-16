@@ -39,11 +39,11 @@ class ProfileViewController: UIViewController, GooglePlacesAutocompleteDelegate 
     
     @IBAction func followUser(sender: UIButton) {
         var newFollow: PFObject
-        var query: PFQuery = PFQuery(className: (PFUser.currentUser())!.username!)
+        var query: PFQuery = PFQuery(className: "Follow")
         query.whereKey("toUser", equalTo: testString)
         if query.countObjects() == 0
         {
-            newFollow = PFObject(className: (PFUser.currentUser())!.username!)
+            newFollow = PFObject(className: "Follow")
             newFollow.setObject((PFUser.currentUser())!.username!, forKey: "fromUser")
             newFollow.setObject(testString, forKey: "toUser")
             newFollow.saveInBackgroundWithBlock { (success, error)  -> Void in

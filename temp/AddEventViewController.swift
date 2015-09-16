@@ -47,7 +47,7 @@ class AddEventViewController: UIViewController, GooglePlacesAutocompleteDelegate
 
     @IBAction func saveEvent(sender: UIButton) {
         var newEvent: PFObject
-        newEvent = PFObject(className: PFUser.currentUser()!.username! + "_Content" )
+        newEvent = PFObject(className: "Events")
         newEvent.setObject(eventTitle.text, forKey: "Event_Title")
         newEvent.setObject(locationName.text!, forKey: "Location")
         newEvent.setObject(PFUser.currentUser()!.username!, forKey: "User")

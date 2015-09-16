@@ -11,7 +11,7 @@ import Parse
 import ParseUI
 import GoogleMaps
 
-class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var userSearch: UISearchBar!
     var profileuser: PFUser!
@@ -32,6 +32,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         userSearch.delegate = self
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
 
@@ -125,38 +126,52 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         }
     }
     
+    
+    
+    
+    var posts = []
+    
     func searchForEvents()
     {
-//        var followArray: NSMutableArray = []
-//        var q = PFQuery(className: PFUser.currentUser()!.username!)
-//        q.selectKeys(["toUser"])
-//        q.findObjects()
-//        
-//        
-//        println("\n\n")
-//        println(q.getFirstObject()?.description)
-//        println("\n\n")
-//        
-//        
-//        
-//        var query = PFQuery(className: PFUser.currentUser()!.username! + "_Content")
-//        query.orderByDescending("updatedAt")
-//        query.findObjects()
-//
-//        
-//        var temp = query.getFirstObject()!["Location"] as? String
-//
-//        
-////        if query.countObjects() != 0
-////        {
-////            var obj = query.getFirstObject()!
-////            eventName.text = obj["Event_Title"] as? String
-////            locationName.text = obj["Location"] as? String
-////            addedBy.text = obj["User"] as? String
-////        }
+        let followingQuery = PFQuery(className: "Follow")
+        followingQuery.whereKey("fromUser", equalTo: PFUser.currentUser()!.username!)
+        
+        let postsFromFollowedUsers = PFQuery(className: "Events")
+        postsFromFollowedUsers.whereKey("User", matchesKey: "toUser", inQuery: followingQuery)
+        
+        let postsFromUser = PFQuery(className: "Events")
+        postsFromUser.whereKey("User", equalTo: PFUser.currentUser()!.username!)
+        
+        let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers, postsFromUser])
+        query.orderByDescending("updatedAt")
+        
+        query.findObjectsInBackgroundWithBlock{(result: [AnyObject]?, error: NSError?) -> Void in
+            self.posts = (result as? [PFObject])!
+            self.tableView.reloadData()
+        }
     }
 
     
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! EventTableViewCell
+
+        var temp: PFObject = posts.objectAtIndex(indexPath.row) as! PFObject
+        cell.eventNameLabel.text = temp["Event_Title"] as? String
+        cell.locationLabel.text = temp["Location"] as? String
+        cell.usernameLabel.text = temp["User"] as? String
+        return cell
+    }
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
     
     
     

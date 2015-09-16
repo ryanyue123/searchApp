@@ -26,6 +26,7 @@
 		3C9A1C721B97A43F00976AFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9A1C711B97A43F00976AFD /* SystemConfiguration.framework */; };
 		3C9A1C741B97A44500976AFD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9A1C731B97A44500976AFD /* libz.dylib */; };
 		3C9A1C761B97A44B00976AFD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9A1C751B97A44B00976AFD /* libsqlite3.dylib */; };
+		3C9BCA741BA93E42006C09DD /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BCA731BA93E42006C09DD /* EventTableViewCell.swift */; };
 		3CA0ACFB1BA15F77002AE68B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0ACFA1BA15F77002AE68B /* ProfileViewController.swift */; };
 		E10186F7FA3662B77F4EDE15 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71152515C553464C12B408B /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		3C9A1C711B97A43F00976AFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3C9A1C731B97A44500976AFD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3C9A1C751B97A44B00976AFD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3C9BCA731BA93E42006C09DD /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		3CA0ACFA1BA15F77002AE68B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4968DB408D020527246F0CE6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BADCEE61783D90FD00A632F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				3CA0ACFA1BA15F77002AE68B /* ProfileViewController.swift */,
 				3C067E471BA54987008D71BA /* AddEventViewController.swift */,
 				3C632EEF1B97A30A00B8E39C /* Main.storyboard */,
+				3C9BCA731BA93E42006C09DD /* EventTableViewCell.swift */,
 				3C632EF21B97A30A00B8E39C /* Images.xcassets */,
 				3C632EF41B97A30A00B8E39C /* LaunchScreen.xib */,
 				3C632EE91B97A30A00B8E39C /* Supporting Files */,
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9BCA741BA93E42006C09DD /* EventTableViewCell.swift in Sources */,
 				3C5D5CFF1BA3C4C30001A3D0 /* GooglePlacesAutocomplete.swift in Sources */,
 				3C067E481BA54987008D71BA /* AddEventViewController.swift in Sources */,
 				3CA0ACFB1BA15F77002AE68B /* ProfileViewController.swift in Sources */,
